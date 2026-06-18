@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denis Kolesnikov — Founder · Builder · AI Engineer</title>
+  <meta name="description" content="Denis Kolesnikov — founder and AI engineer building intelligent products: a smart pet collar, autonomous AI agent teams, and developer tools." />
+  <meta property="og:title" content="Denis Kolesnikov — Founder · Builder · AI Engineer" />
+  <meta property="og:description" content="Building intelligent products: a smart pet collar, autonomous AI agent teams, and developer tools." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true"></div>
+
+  <!-- ===================== FLOATING NAV PILL ===================== -->
+  <header class="dock" id="dock">
+    <a href="#hero" class="dock__logo" aria-label="Home">DK</a>
+    <span class="dock__sep"></span>
+    <nav class="dock__nav" aria-label="Primary">
+      <a href="#hero" data-tip="Home" aria-label="Home">
+        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>
+      </a>
+      <a href="#about" data-tip="About" aria-label="About">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      </a>
+      <a href="#skills" data-tip="Skills" aria-label="Skills">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      </a>
+      <a href="#projects" data-tip="Projects" aria-label="Projects">
+        <svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/></svg>
+      </a>
+      <a href="#contact" data-tip="Contact" aria-label="Contact">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+    </nav>
+    <span class="dock__sep"></span>
+    <div class="dock__social">
+      <a href="https://github.com/Lenis45" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub">
+        <img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="17" height="17" />
+      </a>
+      <a href="https://t.me/USERNAME" target="_blank" rel="noopener" data-tip="Telegram" aria-label="Telegram" id="dock-tg">
+        <img src="https://cdn.simpleicons.org/telegram/ffffff" alt="" width="17" height="17" />
+      </a>
+    </div>
+    <span class="dock__sep"></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="lang__btn" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang__btn" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">founder<span class="mid">·</span>builder<span class="mid">·</span><span class="accent">ai&nbsp;engineer</span></p>
+          <h1 class="hero__title">Denis<br />Kolesnikov</h1>
+          <p class="hero__lead" data-i18n="hero.lead">
+            I build intelligent products end-to-end — a smart pet collar, autonomous AI agent teams, and developer tools.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View projects</a>
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero.ctaContact">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero__photo">
+          <div class="photo-card">
+            <img src="assets/hero.png" alt="Denis Kolesnikov" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about">
+      <div class="wrap about__grid">
+        <div class="about__photo">
+          <div class="photo-card photo-card--alt">
+            <img src="assets/about.png" alt="Denis Kolesnikov" />
+          </div>
+        </div>
+        <div class="about__copy">
+          <h2 class="h2"><span class="h2__tick">//</span> <span data-i18n="about.title">about</span></h2>
+          <p data-i18n="about.p1">I'm a founder and AI engineer. I ship real products end-to-end — from BLE telemetry protocols and Go microservices to React frontends and Kotlin apps.</p>
+          <p class="dim" data-i18n="about.p2">I run my startup with a team of autonomous AI agents I built from scratch. I send a goal on Telegram; they decompose it into tasks, route each to a specialist, cascade outputs between dependents, and report back. I approve what ships — the rest runs on its own, 24/7.</p>
+          <div class="stats">
+            <div class="stat"><span class="stat__n" data-count="8">8</span><span class="stat__l" data-i18n="stat.services">Go microservices</span></div>
+            <div class="stat"><span class="stat__n" data-count="9">9</span><span class="stat__l" data-i18n="stat.agents">AI agents</span></div>
+            <div class="stat"><span class="stat__n" data-count="5">5</span><span class="stat__l" data-i18n="stat.departments">departments</span></div>
+            <div class="stat"><span class="stat__n">24/7</span><span class="stat__l" data-i18n="stat.uptime">autonomous</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="skills" id="skills">
+      <div class="wrap">
+        <h2 class="skills__title" data-i18n="skills.title">Skills that fuel my passion</h2>
+        <p class="skills__sub" data-i18n="skills.sub">The stack I use to design, build and run real products.</p>
+
+        <div class="skills__grid">
+          <!-- 1 -->
+          <article class="scard">
+            <div class="badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/go" alt="Go" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/python" alt="Python" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/c" alt="C" /></span>
+            </div>
+            <h3 class="scard__t" data-i18n="sk.langs.t">Languages</h3>
+            <p class="scard__d" data-i18n="sk.langs.d">Building reliable systems across the stack — from low-level services to strongly-typed frontends.</p>
+          </article>
+
+          <!-- 2 -->
+          <article class="scard">
+            <div class="badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/go" alt="Go" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/redis" alt="Redis" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka/ffffff" alt="Kafka" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
+            </div>
+            <h3 class="scard__t" data-i18n="sk.backend.t">Backend &amp; APIs</h3>
+            <p class="scard__d" data-i18n="sk.backend.d">Robust Go microservices, Kafka streaming and clean handler → repository layering. Gin · pgx · Keycloak RS256.</p>
+          </article>
+
+          <!-- 3 -->
+          <article class="scard">
+            <div class="badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="LLM" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/python" alt="Python" /></span>
+            </div>
+            <h3 class="scard__t" data-i18n="sk.ai.t">AI &amp; Agents</h3>
+            <p class="scard__d" data-i18n="sk.ai.d">Autonomous agent teams that decompose goals, route tasks and ship real work with a human in the loop.</p>
+            <div class="chips">
+              <span>Groq LLaMA 3.3</span><span>Ollama</span><span>Qdrant</span><span>FastMCP</span><span>RAG</span>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="scard">
+            <div class="badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/elasticsearch" alt="Elasticsearch" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka/ffffff" alt="Kafka" /></span>
+            </div>
+            <h3 class="scard__t" data-i18n="sk.data.t">Data</h3>
+            <p class="scard__d" data-i18n="sk.data.d">Time-series metrics per minute, streaming ingestion and observability with the ELK stack.</p>
+          </article>
+
+          <!-- 5 -->
+          <article class="scard">
+            <div class="badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/react" alt="React" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/vite" alt="Vite" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/android" alt="Android" /></span>
+            </div>
+            <h3 class="scard__t" data-i18n="sk.front.t">Frontend &amp; Mobile</h3>
+            <p class="scard__d" data-i18n="sk.front.d">React 19 + Vite web apps and Kotlin / Jetpack Compose Android with MVVM, Room and Hilt.</p>
+          </article>
+
+          <!-- 6 -->
+          <article class="scard">
+            <div class="badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/docker" alt="Docker" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/gitlab" alt="GitLab" /></span>
+            </div>
+            <h3 class="scard__t" data-i18n="sk.infra.t">Infra &amp; DevOps</h3>
+            <p class="scard__d" data-i18n="sk.infra.d">Containerized deployments, TLS edge, encrypted backups and CI/CD on GitHub Actions and GitLab.</p>
+          </article>
+
+          <!-- 7 -->
+          <article class="scard scard--wide">
+            <h3 class="scard__t" data-i18n="sk.practice.t">Practices</h3>
+            <p class="scard__d" data-i18n="sk.practice.d">Shipping end-to-end with a human-in-the-loop AI workforce.</p>
+            <div class="chips">
+              <span data-i18n="sk.practice.c1">System Design</span>
+              <span data-i18n="sk.practice.c2">Microservices</span>
+              <span>CI/CD</span>
+              <span data-i18n="sk.practice.c3">Code Review</span>
+              <span data-i18n="sk.practice.c4">Problem Solving</span>
+              <span data-i18n="sk.practice.c5">Leadership</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="projects" id="projects">
+      <div class="wrap">
+        <h2 class="projects__title">
+          <span data-i18n="projects.t1">welcome to my realm of</span><br />
+          <span data-i18n="projects.t2">wild projects and awesome creations</span>
+        </h2>
+
+        <div class="projects__grid">
+          <a class="pcard" href="https://amori.online" target="_blank" rel="noopener">
+            <div class="pcard__img">
+              <img src="assets/proj-amori.png" alt="Amori — Smart Pet Platform"
+                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
+              <span class="pcard__ph">Amori</span>
+            </div>
+            <div class="pcard__label">
+              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+              <span>Amori — <span data-i18n="proj.amori">Smart Pet Platform</span></span>
+            </div>
+          </a>
+
+          <a class="pcard" href="https://github.com/Lenis45/agent-os" target="_blank" rel="noopener">
+            <div class="pcard__img">
+              <img src="assets/proj-agent-ui.png" alt="AI Team System"
+                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
+              <span class="pcard__ph">AI Team System</span>
+            </div>
+            <div class="pcard__label">
+              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+              <span>AI Team System</span>
+            </div>
+          </a>
+
+          <a class="pcard" href="#contact">
+            <div class="pcard__img">
+              <img src="assets/proj-dashboard.png" alt="Ops Dashboard"
+                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
+              <span class="pcard__ph">Ops Dashboard</span>
+            </div>
+            <div class="pcard__label">
+              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+              <span>Ops Dashboard</span>
+            </div>
+          </a>
+
+          <a class="pcard" href="#contact">
+            <div class="pcard__img">
+              <img src="assets/proj-pixel-office.png" alt="Pixel Office"
+                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
+              <span class="pcard__ph">Pixel Office</span>
+            </div>
+            <div class="pcard__label">
+              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+              <span>Pixel Office</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+      <div class="wrap contact__inner">
+        <div class="contact__left">
+          <p class="contact__kicker" data-i18n="contact.kicker">That's all for now.</p>
+          <h2 class="contact__title">
+            <span data-i18n="contact.l1">Got a project in mind?</span><br />
+            <span data-i18n="contact.l2">Let's talk</span>
+          </h2>
+        </div>
+        <a class="getintouch" href="mailto:denworkplace@gmail.com" aria-label="Get in touch">
+          <span data-i18n="contact.btn">Get in touch</span>
+        </a>
+      </div>
+      <div class="wrap contact__meta">
+        <div class="contact__field">
+          <span class="contact__k">Email</span>
+          <a href="mailto:denworkplace@gmail.com">denworkplace@gmail.com</a>
+        </div>
+        <div class="contact__field">
+          <span class="contact__k">GitHub</span>
+          <a href="https://github.com/Lenis45" target="_blank" rel="noopener">github.com/Lenis45</a>
+        </div>
+        <div class="contact__field">
+          <span class="contact__k">Telegram</span>
+          <a href="https://t.me/USERNAME" target="_blank" rel="noopener" id="meta-tg">@USERNAME</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER BAND ===================== -->
+  <footer class="footer" id="footer">
+    <div class="wrap footer__top">
+      <span class="footer__role">founder · builder · ai engineer</span>
+      <a href="#hero" class="footer__arrow" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+    <div class="footer__name">Kolesnikov</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
