@@ -191,10 +191,40 @@ function initDockActive() {
   sections.forEach((s) => io.observe(s));
 }
 
+function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  const update = () => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = total > 0 ? (window.scrollY / total * 100) + '%' : '0%';
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+function initCopyEmail() {
+  document.querySelectorAll('.copy-btn[data-email]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const email = btn.dataset.email;
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(email).then(() => {
+        btn.classList.add('copied');
+        btn.setAttribute('aria-label', 'Copied!');
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.setAttribute('aria-label', 'Copy email');
+        }, 2000);
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLang();
   initReveal();
   initCounters();
   initDockActive();
+  initScrollProgress();
+  initCopyEmail();
 });

@@ -323,6 +323,47 @@ img { display: block; max-width: 100%; }
 .light .scard:hover { background: var(--surface); box-shadow: 0 8px 28px rgba(0,0,0,.08); }
 
 /* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 200;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width .1s linear;
+  pointer-events: none;
+}
+
+/* ============================================================
+   BADGE ICON INVERSION (dark icons → visible in dark theme)
+   ============================================================ */
+.badge img[data-invert] { filter: brightness(0) invert(1); }
+.light .badge img[data-invert] { filter: brightness(0); }
+
+/* ============================================================
+   PROJECT CARD TECH TAGS
+   ============================================================ */
+.pcard__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.pcard__tags span {
+  font-size: 11.5px; color: var(--text-mute); padding: 3px 9px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--bg-2);
+}
+
+/* ============================================================
+   COPY EMAIL BUTTON
+   ============================================================ */
+.contact__email-row { display: flex; align-items: center; gap: 8px; }
+.copy-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: 1px solid var(--border); border-radius: 7px;
+  cursor: pointer; padding: 4px 6px; color: var(--text-mute);
+  transition: color .2s, border-color .2s, background .2s;
+  flex: none;
+}
+.copy-btn svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.copy-btn:hover { color: var(--accent-2); border-color: var(--accent-2); background: var(--surface-2); }
+.copy-btn.copied { color: #5cb85c; border-color: #5cb85c; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 980px) {

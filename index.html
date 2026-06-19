@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Denis Kolesnikov — Founder · Builder · AI Engineer</title>
-  <meta name="description" content="Denis Kolesnikov — founder and AI engineer building intelligent products: a smart pet collar, autonomous AI agent teams, and developer tools." />
+  <meta name="description" content="Denis Kolesnikov — founder and engineer. IoT hardware, Go microservices, React apps, and autonomous AI agent teams." />
   <meta property="og:title" content="Denis Kolesnikov — Founder · Builder · AI Engineer" />
-  <meta property="og:description" content="Building intelligent products: a smart pet collar, autonomous AI agent teams, and developer tools." />
+  <meta property="og:description" content="IoT hardware, Go microservices, React apps, and autonomous AI agent teams — built end to end." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lenis45.github.io/" />
+  <meta property="og:image" content="https://lenis45.github.io/assets/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23635BE8'/><text x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='15' fill='white'>DK</text></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +19,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <div class="bg-fx" aria-hidden="true"></div>
 
   <!-- ===================== FLOATING NAV PILL ===================== -->
@@ -41,10 +46,10 @@
     <span class="dock__sep"></span>
     <div class="dock__social">
       <a href="https://github.com/Lenis45" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub">
-        <img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="17" height="17" />
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
       </a>
       <a href="https://t.me/deni_kol" target="_blank" rel="noopener" data-tip="Telegram" aria-label="Telegram" id="dock-tg">
-        <img src="https://cdn.simpleicons.org/telegram/ffffff" alt="" width="17" height="17" />
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
       </a>
     </div>
     <span class="dock__sep"></span>
@@ -129,7 +134,7 @@
             <div class="badges">
               <span class="badge"><img src="https://cdn.simpleicons.org/go" alt="Go" /></span>
               <span class="badge"><img src="https://cdn.simpleicons.org/redis" alt="Redis" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka/ffffff" alt="Kafka" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka" alt="Kafka" data-invert /></span>
               <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.backend.t">Backend &amp; APIs</h3>
@@ -154,7 +159,7 @@
             <div class="badges">
               <span class="badge"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" /></span>
               <span class="badge"><img src="https://cdn.simpleicons.org/elasticsearch" alt="Elasticsearch" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka/ffffff" alt="Kafka" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka" alt="Kafka" data-invert /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.data.t">Data</h3>
             <p class="scard__d" data-i18n="sk.data.d">Time-series metrics per minute, streaming ingestion and observability with the ELK stack.</p>
@@ -178,7 +183,7 @@
             <div class="badges">
               <span class="badge"><img src="https://cdn.simpleicons.org/docker" alt="Docker" /></span>
               <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" /></span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/github" alt="GitHub" data-invert /></span>
               <span class="badge"><img src="https://cdn.simpleicons.org/gitlab" alt="GitLab" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.infra.t">Infra &amp; DevOps</h3>
@@ -213,7 +218,7 @@
         <div class="projects__grid">
           <a class="pcard" href="https://amori.online" target="_blank" rel="noopener">
             <div class="pcard__img">
-              <img src="assets/proj-amori.png" alt="Amori — Smart Pet Platform"
+              <img src="assets/proj-amori.png" alt="Amori — Smart Pet Platform" loading="lazy"
                    onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
               <span class="pcard__ph">Amori</span>
             </div>
@@ -221,11 +226,12 @@
               <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
               <span>Amori — <span data-i18n="proj.amori">Smart Pet Platform</span></span>
             </div>
+            <div class="pcard__tags"><span>Go</span><span>BLE</span><span>Android</span><span>IoT</span></div>
           </a>
 
-          <a class="pcard" href="https://github.com/Lenis45/agent-os" target="_blank" rel="noopener">
+          <a class="pcard" href="https://github.com/Lenis45/amori-platform" target="_blank" rel="noopener">
             <div class="pcard__img">
-              <img src="assets/proj-agent-ui.png" alt="AI Team System"
+              <img src="assets/proj-agent-ui.png" alt="AI Team System" loading="lazy"
                    onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
               <span class="pcard__ph">AI Team System</span>
             </div>
@@ -233,11 +239,12 @@
               <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
               <span>AI Team System</span>
             </div>
+            <div class="pcard__tags"><span>Python</span><span>LLM</span><span>MCP</span><span>Postgres</span></div>
           </a>
 
-          <a class="pcard" href="#contact">
+          <a class="pcard" href="https://github.com/Lenis45/amori-platform" target="_blank" rel="noopener">
             <div class="pcard__img">
-              <img src="assets/proj-dashboard.png" alt="Ops Dashboard"
+              <img src="assets/proj-dashboard.png" alt="Ops Dashboard" loading="lazy"
                    onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
               <span class="pcard__ph">Ops Dashboard</span>
             </div>
@@ -245,11 +252,12 @@
               <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
               <span>Ops Dashboard</span>
             </div>
+            <div class="pcard__tags"><span>Python</span><span>REST</span><span>Docker</span></div>
           </a>
 
-          <a class="pcard" href="#contact">
+          <a class="pcard" href="https://github.com/Lenis45/amori-platform" target="_blank" rel="noopener">
             <div class="pcard__img">
-              <img src="assets/proj-pixel-office.png" alt="Pixel Office"
+              <img src="assets/proj-pixel-office.png" alt="Pixel Office" loading="lazy"
                    onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
               <span class="pcard__ph">Pixel Office</span>
             </div>
@@ -257,6 +265,7 @@
               <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
               <span>Pixel Office</span>
             </div>
+            <div class="pcard__tags"><span>TypeScript</span><span>React</span><span>Canvas</span></div>
           </a>
         </div>
       </div>
@@ -279,7 +288,12 @@
       <div class="wrap contact__meta">
         <div class="contact__field">
           <span class="contact__k">Email</span>
-          <a href="mailto:denworkplace@gmail.com">denworkplace@gmail.com</a>
+          <div class="contact__email-row">
+            <a href="mailto:denworkplace@gmail.com">denworkplace@gmail.com</a>
+            <button class="copy-btn" data-email="denworkplace@gmail.com" aria-label="Copy email">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
         </div>
         <div class="contact__field">
           <span class="contact__k">GitHub</span>
