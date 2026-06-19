@@ -48,6 +48,11 @@
       </a>
     </div>
     <span class="dock__sep"></span>
+    <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+      <svg class="theme-btn__sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="theme-btn__moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <span class="dock__sep"></span>
     <div class="lang" role="group" aria-label="Language">
       <button class="lang__btn" data-lang="en" aria-pressed="true">EN</button>
       <button class="lang__btn" data-lang="ru" aria-pressed="false">RU</button>
@@ -62,7 +67,7 @@
           <p class="eyebrow">founder<span class="mid">·</span>builder<span class="mid">·</span><span class="accent">ai&nbsp;engineer</span></p>
           <h1 class="hero__title">Denis<br />Kolesnikov</h1>
           <p class="hero__lead" data-i18n="hero.lead">
-            I build intelligent products end-to-end — a smart pet collar, autonomous AI agent teams, and developer tools.
+            I design and build complete products — IoT hardware, Go services, React apps, and custom AI automation.
           </p>
           <div class="hero__cta">
             <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View projects</a>
@@ -87,8 +92,8 @@
         </div>
         <div class="about__copy">
           <h2 class="h2"><span class="h2__tick">//</span> <span data-i18n="about.title">about</span></h2>
-          <p data-i18n="about.p1">I'm a founder and AI engineer. I ship real products end-to-end — from BLE telemetry protocols and Go microservices to React frontends and Kotlin apps.</p>
-          <p class="dim" data-i18n="about.p2">I run my startup with a team of autonomous AI agents I built from scratch. I send a goal on Telegram; they decompose it into tasks, route each to a specialist, cascade outputs between dependents, and report back. I approve what ships — the rest runs on its own, 24/7.</p>
+          <p data-i18n="about.p1">Founder and engineer. I've shipped a Bluetooth pet collar with custom firmware, deployed 8 Go microservices in production, and built an Android app from the ground up.</p>
+          <p class="dim" data-i18n="about.p2">My startup runs on an AI team I designed from scratch. I post a goal on Telegram — agents break it into tasks, work through them in sequence, and send me a report. I review what ships. Everything else runs around the clock.</p>
           <div class="stats">
             <div class="stat"><span class="stat__n" data-count="8">8</span><span class="stat__l" data-i18n="stat.services">Go microservices</span></div>
             <div class="stat"><span class="stat__n" data-count="9">9</span><span class="stat__l" data-i18n="stat.agents">AI agents</span></div>
@@ -102,8 +107,8 @@
     <!-- ===================== SKILLS ===================== -->
     <section class="skills" id="skills">
       <div class="wrap">
-        <h2 class="skills__title" data-i18n="skills.title">Skills that fuel my passion</h2>
-        <p class="skills__sub" data-i18n="skills.sub">The stack I use to design, build and run real products.</p>
+        <h2 class="skills__title" data-i18n="skills.title">What I build with</h2>
+        <p class="skills__sub" data-i18n="skills.sub">Technologies I reach for when designing, building, and running production systems.</p>
 
         <div class="skills__grid">
           <!-- 1 -->
@@ -116,7 +121,7 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/c" alt="C" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.langs.t">Languages</h3>
-            <p class="scard__d" data-i18n="sk.langs.d">Building reliable systems across the stack — from low-level services to strongly-typed frontends.</p>
+            <p class="scard__d" data-i18n="sk.langs.d">Go and Python for backend and automation, TypeScript for frontends, Kotlin for Android, C for embedded.</p>
           </article>
 
           <!-- 2 -->
@@ -128,7 +133,7 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.backend.t">Backend &amp; APIs</h3>
-            <p class="scard__d" data-i18n="sk.backend.d">Robust Go microservices, Kafka streaming and clean handler → repository layering. Gin · pgx · Keycloak RS256.</p>
+            <p class="scard__d" data-i18n="sk.backend.d">Go microservices with Gin, PostgreSQL via pgx, Kafka for streaming, Keycloak RS256 for auth.</p>
           </article>
 
           <!-- 3 -->
@@ -138,7 +143,7 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/python" alt="Python" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.ai.t">AI &amp; Agents</h3>
-            <p class="scard__d" data-i18n="sk.ai.d">Autonomous agent teams that decompose goals, route tasks and ship real work with a human in the loop.</p>
+            <p class="scard__d" data-i18n="sk.ai.d">A custom AI team where agents pick up tasks, pass results down the chain, and finish a goal start to finish — no manual coordination.</p>
             <div class="chips">
               <span>Groq LLaMA 3.3</span><span>Ollama</span><span>Qdrant</span><span>FastMCP</span><span>RAG</span>
             </div>
@@ -165,7 +170,7 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/android" alt="Android" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.front.t">Frontend &amp; Mobile</h3>
-            <p class="scard__d" data-i18n="sk.front.d">React 19 + Vite web apps and Kotlin / Jetpack Compose Android with MVVM, Room and Hilt.</p>
+            <p class="scard__d" data-i18n="sk.front.d">React 19 + Vite on the web. Kotlin + Jetpack Compose on Android with MVVM, Room, and Hilt.</p>
           </article>
 
           <!-- 6 -->
@@ -177,13 +182,13 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/gitlab" alt="GitLab" /></span>
             </div>
             <h3 class="scard__t" data-i18n="sk.infra.t">Infra &amp; DevOps</h3>
-            <p class="scard__d" data-i18n="sk.infra.d">Containerized deployments, TLS edge, encrypted backups and CI/CD on GitHub Actions and GitLab.</p>
+            <p class="scard__d" data-i18n="sk.infra.d">Docker Compose deployments, Nginx TLS edge, encrypted off-site backups, CI/CD on GitHub Actions and GitLab.</p>
           </article>
 
           <!-- 7 -->
           <article class="scard scard--wide">
-            <h3 class="scard__t" data-i18n="sk.practice.t">Practices</h3>
-            <p class="scard__d" data-i18n="sk.practice.d">Shipping end-to-end with a human-in-the-loop AI workforce.</p>
+            <h3 class="scard__t" data-i18n="sk.practice.t">How I work</h3>
+            <p class="scard__d" data-i18n="sk.practice.d">Designing systems end to end — from architecture to deployment.</p>
             <div class="chips">
               <span data-i18n="sk.practice.c1">System Design</span>
               <span data-i18n="sk.practice.c2">Microservices</span>
@@ -201,8 +206,8 @@
     <section class="projects" id="projects">
       <div class="wrap">
         <h2 class="projects__title">
-          <span data-i18n="projects.t1">welcome to my realm of</span><br />
-          <span data-i18n="projects.t2">wild projects and awesome creations</span>
+          <span data-i18n="projects.t1">a look at some of</span><br />
+          <span data-i18n="projects.t2">the things I've built</span>
         </h2>
 
         <div class="projects__grid">
