@@ -1,323 +1,1134 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denis Kolesnikov — AI Engineer · Builder</title>
-  <meta name="description" content="Denis Kolesnikov — AI engineer and systems builder. Autonomous AI agents, Go microservices, IoT hardware, React apps — end to end." />
-  <meta property="og:title" content="Denis Kolesnikov — AI Engineer · Builder" />
-  <meta property="og:description" content="Autonomous AI agents, Go microservices, IoT hardware, React apps — built end to end." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lenis45.github.io/" />
-  <meta property="og:image" content="https://lenis45.github.io/assets/hero.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23635BE8'/><text x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='15' fill='white'>DK</text></svg>" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Денис Колесников | Портфолио</title>
+  <meta name="description" content="Денис Колесников — AI-инженер и архитектор автоматизации, создающий автономные агентные системы.">
+  <script>
+    (() => {
+      let theme = "light";
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme === "dark") theme = "dark";
+      } catch (_) {}
+      if (theme === "light") document.documentElement.dataset.theme = "light";
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #292d34;
+      --fg: #f2f0f5;
+      --muted: #9aa0aa;
+      --line: #858b96;
+      --dim-line: rgba(165, 171, 183, .42);
+      --accent: #d16be4;
+      --accent-2: #a55cc4;
+      --panel: #23272e;
+      --panel-2: #242830;
+      --ink: #17191f;
+      --green: #31f144;
+      --orange: #ff7d2e;
+      --social: #b8bec8;
+      --quote-mark: #b9bec7;
+      --quote-credit: #c9ccd3;
+      --dark-surface: #1d1d21;
+      --status-bg: rgba(41, 45, 52, .74);
+      --soft-card-bg: rgba(35, 39, 47, .82);
+      --photo-shadow: rgba(0, 0, 0, .26);
+      font-synthesis: none;
+      text-rendering: geometricPrecision;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+    :root[data-theme="light"] {
+      --bg: #f6f7fb;
+      --fg: #252936;
+      --muted: #687180;
+      --line: #8a93a3;
+      --dim-line: rgba(104, 113, 128, .28);
+      --accent: #9c48b8;
+      --accent-2: #8a45aa;
+      --panel: #ffffff;
+      --panel-2: #eef1f6;
+      --ink: #ffffff;
+      --green: #20b63a;
+      --orange: #d66f26;
+      --social: #687180;
+      --quote-mark: #7f8794;
+      --quote-credit: #505866;
+      --dark-surface: #e8ebf1;
+      --status-bg: rgba(255, 255, 255, .86);
+      --soft-card-bg: rgba(255, 255, 255, .86);
+      --photo-shadow: rgba(39, 44, 56, .16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      letter-spacing: 0;
+      overflow-x: hidden;
+      transition: background-color .22s ease, color .22s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .page {
+      position: relative;
+      width: min(100%, 1366px);
+      min-height: 3361px;
+      margin: 0 auto;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(100% - 48px, 1015px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--fg);
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border: 4px solid var(--fg);
+    }
+    .brand-mark::before { left: 0; bottom: 0; border-top: 0; border-right: 0; }
+    .brand-mark::after { top: 0; right: 0; border-bottom: 0; border-left: 0; }
+
+    header {
+      height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 49px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    nav a:first-child { color: var(--accent); }
+    .hash { color: var(--accent); }
+    .lang {
+      color: var(--fg);
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .theme-toggle {
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 28px;
+      border: 2px solid var(--dim-line);
+      background: transparent;
+      color: var(--fg);
+      font: inherit;
+      font-size: 0;
+      cursor: pointer;
+      padding: 0;
+      transition: border-color .18s ease, background-color .18s ease;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      background: var(--panel-2);
+    }
+    .theme-toggle::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: inset -5px -2px 0 var(--bg), 0 0 0 4px rgba(209, 107, 228, .13);
+      transition: box-shadow .18s ease, background-color .18s ease;
+    }
+    :root[data-theme="light"] .theme-toggle::before {
+      background: var(--accent);
+      box-shadow:
+        0 -8px 0 -5px var(--accent),
+        0 8px 0 -5px var(--accent),
+        8px 0 0 -5px var(--accent),
+        -8px 0 0 -5px var(--accent),
+        6px 6px 0 -5px var(--accent),
+        -6px -6px 0 -5px var(--accent),
+        6px -6px 0 -5px var(--accent),
+        -6px 6px 0 -5px var(--accent),
+        0 0 0 4px rgba(156, 72, 184, .12);
+    }
+
+    .side {
+      position: fixed;
+      left: max(22px, calc((100vw - 1366px) / 2 + 22px));
+      top: 0;
+      z-index: 10;
+      width: 34px;
+      height: 215px;
+      border-left: 2px solid var(--line);
+    }
+    .socials {
+      position: absolute;
+      left: -12px;
+      bottom: -92px;
+      display: grid;
+      gap: 23px;
+      color: var(--social);
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .socials a {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      opacity: .9;
+    }
+
+    .hero {
+      min-height: 510px;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      column-gap: 70px;
+      align-items: center;
+      padding-top: 10px;
+    }
+    .hero-copy { padding-top: 18px; }
+    h1 {
+      margin: 0;
+      max-width: 610px;
+      font-size: 35px;
+      line-height: 1.38;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    h1 .accent { color: var(--accent); }
+    .lead {
+      margin: 41px 0 0;
+      max-width: 462px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      min-width: 149px;
+      margin-top: 31px;
+      padding: 0 22px;
+      border: 2px solid var(--accent-2);
+      background: transparent;
+      color: var(--fg);
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .btn.small {
+      height: 36px;
+      min-width: 75px;
+      margin: 0;
+      padding: 0 17px;
+      font-size: 14px;
+    }
+    .btn.muted { border-color: var(--line); color: #b9bec7; }
+
+    .hero-art {
+      position: relative;
+      height: 430px;
+      margin-top: 20px;
+    }
+    .hero-art::before,
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      border: 2px solid var(--accent-2);
+      width: 75px;
+      height: 75px;
+      top: 132px;
+      left: 17px;
+    }
+    .hero-art::after {
+      width: 80px;
+      height: 80px;
+      top: 85px;
+      left: 88px;
+    }
+    .hero-person {
+      position: absolute;
+      width: 447px;
+      right: -12px;
+      top: -28px;
+      z-index: 2;
+      filter: drop-shadow(0 24px 34px var(--photo-shadow));
+    }
+    .portrait-card {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      width: 390px;
+      background: #1f232b;
+      border: 2px solid var(--line);
+      box-shadow: 0 28px 58px rgba(0, 0, 0, .24);
+      z-index: 3;
+    }
+    .portrait-card::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      bottom: -2px;
+      width: 4px;
+      background: var(--accent);
+      z-index: 2;
+    }
+    .portrait-photo {
+      height: 326px;
+      overflow: hidden;
+      background: #181b22;
+      position: relative;
+    }
+    .portrait-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(31, 35, 43, 0) 55%, rgba(31, 35, 43, .56) 100%),
+        radial-gradient(circle at 82% 20%, rgba(209, 107, 228, .10), transparent 36%);
+      pointer-events: none;
+    }
+    .portrait-meta {
+      min-height: 86px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 18px 20px;
+      border-top: 2px solid var(--line);
+      background: rgba(36, 40, 48, .96);
+    }
+    .portrait-meta strong {
+      display: block;
+      color: var(--fg);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .portrait-meta span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .portrait-badge {
+      display: grid;
+      place-items: center;
+      width: 68px;
+      height: 42px;
+      border: 2px solid var(--accent-2);
+      color: var(--fg);
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .hero-stats {
+      position: absolute;
+      left: 48px;
+      bottom: 36px;
+      display: flex;
+      gap: 12px;
+      z-index: 4;
+    }
+    .hero-stat {
+      min-width: 88px;
+      border: 1px solid rgba(133, 139, 150, .72);
+      background: rgba(35, 39, 47, .82);
+      padding: 11px 12px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .hero-stat strong {
+      display: block;
+      color: var(--fg);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+    .status {
+      position: absolute;
+      right: 0;
+      bottom: 48px;
+      width: 407px;
+      height: 37px;
+      border: 2px solid var(--line);
+      background: var(--status-bg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 900;
+      z-index: 3;
+    }
+    .status::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background: var(--accent);
+      flex: 0 0 15px;
+    }
+    .status strong { color: var(--fg); }
+    .hero-art .status { display: flex; }
+
+    .quote {
+      position: relative;
+      width: 716px;
+      min-height: 95px;
+      margin: 54px auto 133px;
+      border: 2px solid var(--line);
+      display: flex;
+      align-items: center;
+      padding: 23px 33px;
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+    .quote::before,
+    .quote::after {
+      position: absolute;
+      color: var(--quote-mark);
+      font-size: 52px;
+      line-height: .8;
+      background: var(--bg);
+      padding: 0 8px;
+      font-weight: 900;
+    }
+    .quote::before { content: "“"; left: 17px; top: -18px; }
+    .quote::after { content: "”"; right: 15px; bottom: -22px; }
+    .quote-credit {
+      position: absolute;
+      right: -2px;
+      bottom: -66px;
+      width: 164px;
+      height: 66px;
+      border: 2px solid var(--line);
+      border-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--quote-credit);
+      font-size: 18px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 0 0 61px;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 516px;
+      background: var(--accent-2);
+      opacity: .8;
+    }
+    .section-title.small-line::after { width: 238px; }
+    .section-title.about-line::after { width: 328px; }
+    .section-title.contact-line::after { width: 128px; }
+
+    .projects-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 61px;
+    }
+    .projects-head .section-title { margin-bottom: 0; }
+    .view-all {
+      margin-top: 14px;
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 31px;
+      margin-bottom: 144px;
+    }
+    .card {
+      border: 2px solid var(--line);
+      background: var(--panel);
+      min-height: 390px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-shot {
+      height: 202px;
+      background: var(--dark-surface);
+      border-bottom: 2px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+    .project-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.9);
+    }
+    .project-shot.custom {
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 25% 28%, rgba(209, 107, 228, .34), transparent 26%),
+        linear-gradient(135deg, #15171d, #252830 58%, #101115);
+    }
+    .agent-window {
+      width: 78%;
+      height: 57%;
+      border: 2px solid #535a66;
+      background: #171a20;
+      box-shadow: 0 0 0 1px rgba(209, 107, 228, .25) inset;
+      padding: 18px;
+      color: #d9dde5;
+    }
+    .agent-window .top { display: flex; gap: 8px; margin-bottom: 17px; }
+    .dot { width: 10px; height: 10px; background: var(--accent); }
+    .agent-window strong { font-size: 23px; display: block; margin-bottom: 7px; }
+    .agent-window span { color: var(--muted); font-size: 12px; }
+
+    .tags {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 11px;
+      border-bottom: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+    .card-body {
+      padding: 20px 17px 17px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .card h3 {
+      margin: 0;
+      min-height: 55px;
+      font-size: 25px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+    .card p {
+      margin: 13px 0 26px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 800;
+      flex: 1;
+    }
+    .card-actions {
+      display: flex;
+      gap: 20px;
+    }
+
+    .skills-section { margin-bottom: 151px; }
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 55px;
+      align-items: start;
+      min-height: 315px;
+    }
+    .decor-space { position: relative; min-height: 310px; }
+    .dots {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      background-image: radial-gradient(circle, var(--social) 2.2px, transparent 2.6px);
+      background-size: 16px 16px;
+      opacity: .95;
+    }
+    .dots.one { left: 33px; top: 31px; }
+    .dots.two { left: 210px; top: 159px; width: 72px; height: 72px; }
+    .frame {
+      position: absolute;
+      border: 2px solid var(--line);
+      opacity: .9;
+    }
+    .frame.a { width: 88px; height: 88px; left: 260px; top: -4px; }
+    .frame.b { width: 52px; height: 52px; left: 332px; top: 190px; }
+    .frame.c { width: 57px; height: 57px; left: 48px; top: 194px; border-color: var(--accent-2); }
+    .frame.d { width: 57px; height: 57px; left: 85px; top: 166px; border-color: var(--accent-2); }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(145px, 1fr));
+      gap: 16px;
+      margin-top: 29px;
+    }
+    .skill-box {
+      border: 2px solid var(--line);
+      min-height: 65px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      font-weight: 800;
+    }
+    .skill-box h4 {
+      margin: 0;
+      height: 31px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid var(--line);
+      padding: 0 9px;
+      color: var(--fg);
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .skill-box p { margin: 9px 9px 10px; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 535px 1fr;
+      align-items: start;
+      gap: 68px;
+      margin-bottom: 150px;
+    }
+    .about p {
+      margin: 0 0 23px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.42;
+      font-weight: 800;
+    }
+    .about-art {
+      position: relative;
+      height: 470px;
+    }
+    .about-person {
+      width: 520px;
+      position: absolute;
+      right: -58px;
+      top: -30px;
+      z-index: 2;
+      filter: drop-shadow(0 24px 34px var(--photo-shadow));
+    }
+    .system-panel {
+      position: absolute;
+      right: -4px;
+      top: 6px;
+      width: 430px;
+      min-height: 430px;
+      border: 2px solid var(--line);
+      background:
+        radial-gradient(circle at 82% 20%, rgba(209, 107, 228, .14), transparent 33%),
+        linear-gradient(135deg, #20242c, #181b22);
+      box-shadow: 0 28px 58px rgba(0, 0, 0, .22);
+      padding: 26px;
+      z-index: 3;
+    }
+    .system-panel::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      opacity: .18;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 42px 42px;
+      pointer-events: none;
+    }
+    .system-panel::after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      bottom: -2px;
+      width: calc(100% + 4px);
+      height: 4px;
+      background: var(--accent);
+    }
+    .system-content {
+      position: relative;
+      z-index: 2;
+    }
+    .system-head {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+    .system-avatar {
+      width: 78px;
+      height: 78px;
+      object-fit: cover;
+      border: 2px solid var(--line);
+      filter: saturate(.82) contrast(1.04);
+    }
+    .system-head h3 {
+      margin: 0 0 7px;
+      font-size: 27px;
+      line-height: 1;
+    }
+    .system-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .system-flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .system-node {
+      min-height: 78px;
+      border: 2px solid rgba(133, 139, 150, .78);
+      background: rgba(35, 39, 47, .88);
+      padding: 14px;
+    }
+    .system-node.wide { grid-column: 1 / -1; }
+    .system-node strong {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--fg);
+      font-size: 15px;
+      margin-bottom: 9px;
+    }
+    .system-node strong::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      flex: 0 0 12px;
+    }
+    .system-node:nth-child(3) strong::before,
+    .system-node:nth-child(4) strong::before { background: var(--green); }
+    .system-node span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+    .about-art .dots {
+      right: -12px;
+      left: auto;
+      top: 8px;
+      width: 110px;
+      height: 90px;
+    }
+    .about-art .dots.two {
+      right: -115px;
+      top: 251px;
+      left: auto;
+      width: 98px;
+      height: 98px;
+    }
+    .about-art::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 8px;
+      width: 270px;
+      height: 2px;
+      background: var(--accent-2);
+    }
+
+    .contacts {
+      display: grid;
+      grid-template-columns: 1fr 410px;
+      gap: 90px;
+      min-height: 374px;
+      margin-bottom: 106px;
+    }
+    .contacts p {
+      max-width: 488px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.36;
+      font-weight: 900;
+    }
+    .contact-card {
+      border: 2px solid var(--line);
+      padding: 17px 19px 19px;
+      margin-bottom: 17px;
+      min-height: 102px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .contact-card h4 {
+      margin: 0 0 22px;
+      color: var(--fg);
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      min-width: 0;
+    }
+    .contact-row span:last-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .contact-card.wide {
+      width: 397px;
+      margin-left: -192px;
+    }
+
+    footer {
+      border-top: 2px solid var(--line);
+      min-height: 252px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      align-items: start;
+      padding-top: 39px;
+      position: relative;
+    }
+    .footer-copy {
+      margin-top: 26px;
+      max-width: 380px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+    .footer-mail {
+      margin-left: 30px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .media h4 {
+      margin: 0 0 29px;
+      font-size: 24px;
+      font-weight: 900;
+    }
+    .media-links { display: flex; gap: 18px; color: var(--social); font-size: 24px; }
+    .copyright {
+      position: absolute;
+      left: 50%;
+      bottom: 41px;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .bg-frame {
+      position: absolute;
+      border: 2px solid var(--line);
+      opacity: .68;
+      z-index: 1;
+    }
+    .bg-frame.f1 { right: -90px; top: 674px; width: 185px; height: 93px; }
+    .bg-frame.f2 { right: -82px; top: 1158px; width: 144px; height: 154px; }
+    .bg-frame.f3 { left: -86px; top: 2097px; width: 164px; height: 101px; }
+    .bg-frame.f4 { left: -66px; top: 2268px; width: 144px; height: 100px; }
+    .page > .dots.bg1 { left: 10px; top: 955px; z-index: 1; }
+    .page > .dots.bg2 { left: -20px; top: 2700px; z-index: 1; }
+
+    @media (max-width: 900px) {
+      .page { min-height: auto; }
+      .side { display: none; }
+      header {
+        height: auto;
+        padding: 26px 0;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      nav { gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+      .hero,
+      .about,
+      .contacts,
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 20px; }
+      .hero-art { height: 380px; max-width: 500px; }
+      .hero-person { right: 0; width: min(86vw, 390px); top: -18px; }
+      .status { right: 14px; width: min(82vw, 407px); }
+      .about-person { right: -30px; width: min(112vw, 520px); }
+      h1 { font-size: 28px; }
+      .quote { width: 100%; font-size: 19px; }
+      .projects { grid-template-columns: 1fr; }
+      .section-title { font-size: 30px; }
+      .section-title::after { width: 100%; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .contact-card.wide { width: 100%; margin-left: 0; }
+      footer { grid-template-columns: 1fr; gap: 38px; }
+      .copyright { position: static; transform: none; margin: 40px 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-  <div class="bg-fx" aria-hidden="true"></div>
-
-  <!-- ===================== FLOATING NAV PILL ===================== -->
-  <header class="dock" id="dock">
-    <a href="#hero" class="dock__logo" aria-label="Home">DK</a>
-    <span class="dock__sep"></span>
-    <nav class="dock__nav" aria-label="Primary">
-      <a href="#hero" data-tip="Home" aria-label="Home">
-        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>
-      </a>
-      <a href="#about" data-tip="About" aria-label="About">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-      </a>
-      <a href="#skills" data-tip="Skills" aria-label="Skills">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-      </a>
-      <a href="#projects" data-tip="Projects" aria-label="Projects">
-        <svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/></svg>
-      </a>
-      <a href="#contact" data-tip="Contact" aria-label="Contact">
-        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-      </a>
-    </nav>
-    <span class="dock__sep"></span>
-    <div class="dock__social">
-      <a href="https://github.com/Lenis45" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-      </a>
-      <a href="https://t.me/deni_kol" target="_blank" rel="noopener" data-tip="Telegram" aria-label="Telegram" id="dock-tg">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-      </a>
+  <aside class="side" aria-label="Social links">
+    <div class="socials">
+      <a href="https://github.com/Lenis45" aria-label="GitHub">◉</a>
+      <a href="https://amori.online" aria-label="Amori">◇</a>
+      <a href="https://t.me/Lenis_45" aria-label="Telegram">✦</a>
     </div>
-    <span class="dock__sep"></span>
-    <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
-      <svg class="theme-btn__sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      <svg class="theme-btn__moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-    <span class="dock__sep"></span>
-    <div class="lang" role="group" aria-label="Language">
-      <button class="lang__btn" data-lang="en" aria-pressed="true">EN</button>
-      <button class="lang__btn" data-lang="ru" aria-pressed="false">RU</button>
-    </div>
-  </header>
+  </aside>
 
-  <main>
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" id="hero">
-      <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow">ai engineer<span class="mid">·</span>builder<span class="mid">·</span><span class="accent">automator</span></p>
-          <h1 class="hero__title">Denis<br />Kolesnikov</h1>
-          <p class="hero__lead" data-i18n="hero.lead">
-            I build autonomous AI systems, Go microservices, and full-stack products — from IoT firmware to production agents running 24/7.
-          </p>
-          <div class="hero__cta">
-            <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View projects</a>
-            <a href="#contact" class="btn btn--ghost" data-i18n="hero.ctaContact">Get in touch</a>
-          </div>
-        </div>
-        <div class="hero__photo">
-          <div class="photo-card">
-            <img src="assets/hero.png" alt="Denis Kolesnikov" />
-          </div>
-        </div>
-      </div>
-    </section>
+  <main class="page">
+    <div class="bg-frame f1"></div>
+    <div class="bg-frame f2"></div>
+    <div class="bg-frame f3"></div>
+    <div class="bg-frame f4"></div>
+    <div class="dots bg1"></div>
+    <div class="dots bg2"></div>
 
-    <!-- ===================== ABOUT ===================== -->
-    <section class="about" id="about">
-      <div class="wrap about__grid">
-        <div class="about__photo">
-          <div class="photo-card photo-card--alt">
-            <img src="assets/about.png" alt="Denis Kolesnikov" />
-          </div>
-        </div>
-        <div class="about__copy">
-          <h2 class="h2"><span class="h2__tick">//</span> <span data-i18n="about.title">about</span></h2>
-          <p data-i18n="about.p1">AI engineer and systems builder. I design and ship complete products — from Bluetooth IoT firmware and 8 Go microservices in production, to autonomous AI agent teams that run around the clock without manual intervention.</p>
-          <p class="dim" data-i18n="about.p2">I built an AI operating system for my startup: post a goal on Telegram, agents decompose it into tasks, work through them in sequence, and send a report. I review what ships. Everything else runs autonomously.</p>
-          <div class="stats">
-            <div class="stat"><span class="stat__n" data-count="8">8</span><span class="stat__l" data-i18n="stat.services">Go microservices</span></div>
-            <div class="stat"><span class="stat__n" data-count="9">9</span><span class="stat__l" data-i18n="stat.agents">AI agents</span></div>
-            <div class="stat"><span class="stat__n" data-count="5">5</span><span class="stat__l" data-i18n="stat.departments">departments</span></div>
-            <div class="stat"><span class="stat__n">24/7</span><span class="stat__l" data-i18n="stat.uptime">autonomous</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SKILLS ===================== -->
-    <section class="skills" id="skills">
-      <div class="wrap">
-        <h2 class="skills__title" data-i18n="skills.title">What I build with</h2>
-        <p class="skills__sub" data-i18n="skills.sub">Technologies I reach for when designing, building, and running production systems.</p>
-
-        <div class="skills__grid">
-          <!-- 1 -->
-          <article class="scard">
-            <div class="badges">
-              <span class="badge"><img src="https://cdn.simpleicons.org/go" alt="Go" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/python" alt="Python" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/c" alt="C" /></span>
-            </div>
-            <h3 class="scard__t" data-i18n="sk.langs.t">Languages</h3>
-            <p class="scard__d" data-i18n="sk.langs.d">Go and Python for backend and automation, TypeScript for frontends, Kotlin for Android, C for embedded.</p>
-          </article>
-
-          <!-- 2 -->
-          <article class="scard">
-            <div class="badges">
-              <span class="badge"><img src="https://cdn.simpleicons.org/go" alt="Go" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/redis" alt="Redis" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka" alt="Kafka" data-invert /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
-            </div>
-            <h3 class="scard__t" data-i18n="sk.backend.t">Backend &amp; APIs</h3>
-            <p class="scard__d" data-i18n="sk.backend.d">Go microservices with Gin, PostgreSQL via pgx, Kafka for streaming, Keycloak RS256 for auth.</p>
-          </article>
-
-          <!-- 3 -->
-          <article class="scard">
-            <div class="badges">
-              <span class="badge"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="LLM" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/python" alt="Python" /></span>
-            </div>
-            <h3 class="scard__t" data-i18n="sk.ai.t">AI &amp; Agents</h3>
-            <p class="scard__d" data-i18n="sk.ai.d">A custom AI team where agents pick up tasks, pass results down the chain, and finish a goal start to finish — no manual coordination.</p>
-            <div class="chips">
-              <span>Groq LLaMA 3.3</span><span>Ollama</span><span>Qdrant</span><span>FastMCP</span><span>RAG</span>
-            </div>
-          </article>
-
-          <!-- 4 -->
-          <article class="scard">
-            <div class="badges">
-              <span class="badge"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/elasticsearch" alt="Elasticsearch" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/apachekafka" alt="Kafka" data-invert /></span>
-            </div>
-            <h3 class="scard__t" data-i18n="sk.data.t">Data</h3>
-            <p class="scard__d" data-i18n="sk.data.d">Time-series metrics per minute, streaming ingestion and observability with the ELK stack.</p>
-          </article>
-
-          <!-- 5 -->
-          <article class="scard">
-            <div class="badges">
-              <span class="badge"><img src="https://cdn.simpleicons.org/react" alt="React" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/vite" alt="Vite" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/android" alt="Android" /></span>
-            </div>
-            <h3 class="scard__t" data-i18n="sk.front.t">Frontend &amp; Mobile</h3>
-            <p class="scard__d" data-i18n="sk.front.d">React 19 + Vite on the web. Kotlin + Jetpack Compose on Android with MVVM, Room, and Hilt.</p>
-          </article>
-
-          <!-- 6 -->
-          <article class="scard">
-            <div class="badges">
-              <span class="badge"><img src="https://cdn.simpleicons.org/docker" alt="Docker" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/nginx" alt="Nginx" /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/github" alt="GitHub" data-invert /></span>
-              <span class="badge"><img src="https://cdn.simpleicons.org/gitlab" alt="GitLab" /></span>
-            </div>
-            <h3 class="scard__t" data-i18n="sk.infra.t">Infra &amp; DevOps</h3>
-            <p class="scard__d" data-i18n="sk.infra.d">Docker Compose deployments, Nginx TLS edge, encrypted off-site backups, CI/CD on GitHub Actions and GitLab.</p>
-          </article>
-
-          <!-- 7 -->
-          <article class="scard scard--wide">
-            <h3 class="scard__t" data-i18n="sk.practice.t">How I work</h3>
-            <p class="scard__d" data-i18n="sk.practice.d">Designing systems end to end — from architecture to deployment.</p>
-            <div class="chips">
-              <span data-i18n="sk.practice.c1">System Design</span>
-              <span data-i18n="sk.practice.c2">Microservices</span>
-              <span>CI/CD</span>
-              <span data-i18n="sk.practice.c3">Code Review</span>
-              <span data-i18n="sk.practice.c4">Problem Solving</span>
-              <span data-i18n="sk.practice.c5">Leadership</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PROJECTS ===================== -->
-    <section class="projects" id="projects">
-      <div class="wrap">
-        <h2 class="projects__title">
-          <span data-i18n="projects.t1">a look at some of</span><br />
-          <span data-i18n="projects.t2">the things I've built</span>
-        </h2>
-
-        <div class="projects__grid">
-          <a class="pcard" href="https://amori.online" target="_blank" rel="noopener">
-            <div class="pcard__img">
-              <img src="assets/proj-amori.png" alt="Amori — Smart Pet Platform" loading="lazy"
-                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
-              <span class="pcard__ph">Amori</span>
-            </div>
-            <div class="pcard__label">
-              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-              <span>Amori — <span data-i18n="proj.amori">Smart Pet Platform</span></span>
-            </div>
-            <div class="pcard__tags"><span>Go</span><span>BLE</span><span>Android</span><span>IoT</span></div>
-          </a>
-
-          <a class="pcard" href="https://github.com/Lenis45/agent-os" target="_blank" rel="noopener">
-            <div class="pcard__img">
-              <img src="assets/proj-agent-ui.png" alt="AI Team System" loading="lazy"
-                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
-              <span class="pcard__ph">AI Team System</span>
-            </div>
-            <div class="pcard__label">
-              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-              <span>AI Team System</span>
-            </div>
-            <div class="pcard__tags"><span>Python</span><span>LLM</span><span>MCP</span><span>Postgres</span></div>
-          </a>
-
-          <a class="pcard" href="https://github.com/Lenis45/online-store" target="_blank" rel="noopener">
-            <div class="pcard__img">
-              <img src="assets/proj-dashboard.png" alt="Online Store" loading="lazy"
-                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
-              <span class="pcard__ph">Online Store</span>
-            </div>
-            <div class="pcard__label">
-              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-              <span>Online Store</span>
-            </div>
-            <div class="pcard__tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>MobX</span></div>
-          </a>
-
-          <a class="pcard" href="https://github.com/Lenis45/3d_portfolio" target="_blank" rel="noopener">
-            <div class="pcard__img">
-              <img src="assets/proj-pixel-office.png" alt="3D Portfolio" loading="lazy"
-                   onerror="this.closest('.pcard__img').classList.add('ph');this.remove();" />
-              <span class="pcard__ph">3D Portfolio</span>
-            </div>
-            <div class="pcard__label">
-              <span class="pcard__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-              <span>3D Portfolio</span>
-            </div>
-            <div class="pcard__tags"><span>Three.js</span><span>React</span><span>Framer Motion</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== CONTACT ===================== -->
-    <section class="contact" id="contact">
-      <div class="wrap contact__inner">
-        <div class="contact__left">
-          <p class="contact__kicker" data-i18n="contact.kicker">That's all for now.</p>
-          <h2 class="contact__title">
-            <span data-i18n="contact.l1">Got a project in mind?</span><br />
-            <span data-i18n="contact.l2">Let's talk</span>
-          </h2>
-        </div>
-        <a class="getintouch" href="mailto:denworkplace@gmail.com" aria-label="Get in touch">
-          <span data-i18n="contact.btn">Get in touch</span>
+    <div class="container">
+      <header>
+        <a class="brand" href="#home" aria-label="Denis Kolesnikov home">
+          <span class="brand-mark"></span>
+          <span>Denis</span>
         </a>
-      </div>
-      <div class="wrap contact__meta">
-        <div class="contact__field">
-          <span class="contact__k">Email</span>
-          <div class="contact__email-row">
-            <a href="mailto:denworkplace@gmail.com">denworkplace@gmail.com</a>
-            <button class="copy-btn" data-email="denworkplace@gmail.com" aria-label="Copy email">
-              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            </button>
+        <nav aria-label="Основная навигация">
+          <a href="#home"><span class="hash">#</span>главная</a>
+          <a href="#works"><span class="hash">#</span>проекты</a>
+          <a href="#about"><span class="hash">#</span>обо-мне</a>
+          <a href="#contacts"><span class="hash">#</span>контакты</a>
+          <span class="lang">RU</span>
+          <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему"></button>
+        </nav>
+      </header>
+
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <h1>Денис — <span class="accent">AI-инженер</span> и архитектор <span class="accent">автоматизации</span></h1>
+          <p class="lead">Проектирую автономные AI-системы, которые берут на себя операционные задачи: контент, CRM, почту, аналитику, инфраструктуру и контроль выполнения.</p>
+          <a class="btn" href="#contacts">Связаться</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="hero-person" src="assets/denis-hero-cutout.png" alt="">
+          <div class="status">Сейчас работаю над <strong>agent-os</strong></div>
+        </div>
+      </section>
+
+      <section class="quote" aria-label="Цитата">
+        <span>Я ставлю цель — агенты доводят её до результата</span>
+        <span class="quote-credit">- agent-os</span>
+      </section>
+
+      <section id="works" aria-labelledby="projects-title">
+        <div class="projects-head">
+          <h2 class="section-title" id="projects-title"><span class="hash">#</span>проекты</h2>
+          <a class="view-all" href="https://github.com/Lenis45?tab=repositories">Все проекты ~~&gt;</a>
+        </div>
+
+        <div class="projects">
+          <article class="card">
+            <div class="project-shot">
+              <img src="assets/project-agent-os.png" alt="">
+            </div>
+            <div class="tags">Python PostgreSQL Qdrant Redis FastMCP</div>
+            <div class="card-body">
+              <h3>agent-os</h3>
+              <p>Личная AI-операционная система: 9 агентов, 5 отделов и автоматизация startup-операций 24/7.</p>
+              <div class="card-actions">
+                <a class="btn small" href="https://github.com/Lenis45/agent-os">Код &lt;~&gt;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="project-shot">
+              <img src="assets/project-online-store.png" alt="">
+            </div>
+            <div class="tags">React Express Node.js PostgreSQL</div>
+            <div class="card-body">
+              <h3>online-store</h3>
+              <p>Full-stack интернет-магазин: витрина на React, API на Node.js/Express и PostgreSQL.</p>
+              <div class="card-actions">
+                <a class="btn small" href="https://github.com/Lenis45/online-store">Код &lt;~&gt;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="project-shot">
+              <img src="assets/project-university-map.png" alt="">
+            </div>
+            <div class="tags">React TypeScript Redux SVG</div>
+            <div class="card-body">
+              <h3>University_Map</h3>
+              <p>Интерактивная карта кампуса с SVG-сценой, состоянием на Redux и React-интерфейсом.</p>
+              <div class="card-actions">
+                <a class="btn small" href="https://github.com/Lenis45/University_Map">Код &lt;~&gt;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills-section" aria-labelledby="skills-title">
+        <h2 class="section-title small-line" id="skills-title"><span class="hash">#</span>навыки</h2>
+        <div class="skills-layout">
+          <div class="decor-space" aria-hidden="true">
+            <div class="dots one"></div>
+            <div class="dots two"></div>
+            <div class="frame a"></div>
+            <div class="frame b"></div>
+            <div class="frame c"></div>
+            <div class="frame d"></div>
+          </div>
+          <div class="skill-grid">
+            <div class="skill-box">
+              <h4>Языки</h4>
+              <p>Python Go<br>TypeScript JavaScript</p>
+            </div>
+            <div class="skill-box">
+              <h4>Базы данных</h4>
+              <p>PostgreSQL Redis<br>Qdrant Mongo</p>
+            </div>
+            <div class="skill-box">
+              <h4>Инструменты</h4>
+              <p>Codex MCP Docker<br>launchd Git Langfuse</p>
+            </div>
+            <div class="skill-box">
+              <h4>AI / Ops</h4>
+              <p>LLM routing CRM<br>Monitoring Agents</p>
+            </div>
+            <div class="skill-box">
+              <h4>Фреймворки</h4>
+              <p>React FastMCP<br>Express Expo Three.js</p>
+            </div>
           </div>
         </div>
-        <div class="contact__field">
-          <span class="contact__k">GitHub</span>
-          <a href="https://github.com/Lenis45" target="_blank" rel="noopener">github.com/Lenis45</a>
-        </div>
-        <div class="contact__field">
-          <span class="contact__k">Telegram</span>
-          <a href="https://t.me/deni_kol" target="_blank" rel="noopener" id="meta-tg">@deni_kol</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- ===================== FOOTER BAND ===================== -->
-  <footer class="footer" id="footer">
-    <div class="wrap footer__top">
-      <span class="footer__role">ai engineer · builder · automator</span>
-      <a href="#hero" class="footer__arrow" aria-label="Back to top">
-        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div>
+          <h2 class="section-title about-line" id="about-title"><span class="hash">#</span>обо-мне</h2>
+          <p>Привет, я Денис!</p>
+          <p>Я AI-инженер из Москвы. Собираю системы, где несколько специализированных агентов работают как мини-команда: принимают цели, разбивают их на задачи, передают контекст и возвращают готовый результат.</p>
+          <p>Мой главный проект — agent-os для Amori: оркестратор, очередь задач, content factory, CRM-синхронизация, мониторинг инфраструктуры и MCP-инструменты для Codex/Claude. Правило простое: агенты делают работу, я утверждаю то, что выходит наружу.</p>
+          <a class="btn" href="https://github.com/Lenis45/Lenis45">Подробнее -&gt;</a>
+        </div>
+        <div class="about-art" aria-hidden="true">
+          <div class="dots"></div>
+          <div class="dots two"></div>
+          <img class="about-person" src="assets/denis-about-cutout.png" alt="">
+        </div>
+      </section>
+
+      <section id="contacts" class="contacts" aria-labelledby="contacts-title">
+        <div>
+          <h2 class="section-title contact-line" id="contacts-title"><span class="hash">#</span>контакты</h2>
+          <p>Открыт к задачам на стыке AI-инженерии, автоматизации, продуктов и инфраструктуры: от прототипа агента до системы, которая реально работает каждый день.</p>
+        </div>
+        <div>
+          <div class="contact-card">
+            <h4>Написать мне</h4>
+            <a class="contact-row" href="https://t.me/Lenis_45"><span>◉</span><span>@Lenis_45</span></a>
+            <a class="contact-row" href="https://github.com/Lenis45"><span>✉</span><span>github.com/Lenis45</span></a>
+          </div>
+          <div class="contact-card wide">
+            <h4>Проекты и продукт</h4>
+            <a class="contact-row" href="https://amori.online"><span>▰</span><span>amori.online</span></a>
+            <a class="contact-row" href="https://github.com/Lenis45/agent-os"><span>฿</span><span>github.com/Lenis45/agent-os</span></a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          <a class="brand" href="#home"><span class="brand-mark"></span><span>Denis</span></a>
+          <a class="footer-mail" href="https://amori.online">amori.online</a>
+          <p class="footer-copy">AI-инженер и архитектор автоматизации, создающий автономные агентные системы в Москве</p>
+        </div>
+        <div class="media">
+          <h4>Медиа</h4>
+          <div class="media-links">
+            <a href="https://github.com/Lenis45" aria-label="GitHub">◉</a>
+            <a href="https://amori.online" aria-label="Website">◇</a>
+            <a href="https://t.me/Lenis_45" aria-label="Telegram">●</a>
+          </div>
+        </div>
+        <div class="copyright">© Copyright 2026. Сделано Денисом</div>
+      </footer>
     </div>
-    <div class="footer__name">Kolesnikov</div>
-  </footer>
+  </main>
+  <script>
+    (() => {
+      const button = document.querySelector(".theme-toggle");
+      if (!button) return;
 
-  <script src="js/main.js"></script>
+      const setTheme = (theme) => {
+        if (theme === "light") {
+          document.documentElement.dataset.theme = "light";
+        } else {
+          delete document.documentElement.dataset.theme;
+        }
+        button.setAttribute("aria-pressed", String(theme === "light"));
+        button.setAttribute("aria-label", theme === "light" ? "Включить тёмную тему" : "Включить светлую тему");
+        button.title = theme === "light" ? "Включить тёмную тему" : "Включить светлую тему";
+      };
+
+      const currentTheme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+      setTheme(currentTheme);
+
+      button.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        try {
+          if (nextTheme === "light") localStorage.setItem("portfolio-theme", "light");
+          else localStorage.setItem("portfolio-theme", "dark");
+        } catch (_) {}
+        setTheme(nextTheme);
+      });
+    })();
+  </script>
 </body>
 </html>
