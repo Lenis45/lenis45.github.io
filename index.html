@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Денис Колесников | Портфолио</title>
-  <meta name="description" content="Денис Колесников — AI-инженер и архитектор автоматизации, создающий автономные агентные системы.">
+  <meta name="description" content="Портфолио Дениса Колесникова — AI-инженера и full-stack разработчика из Москвы. Навыки, проекты и актуальные данные GitHub.">
   <script>
     (() => {
       let theme = "light";
@@ -236,6 +236,23 @@
       font-size: 15px;
       line-height: 1.5;
       font-weight: 800;
+    }
+    .github-sync {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+    .github-sync::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      background: var(--green);
     }
 
     .btn {
@@ -571,6 +588,14 @@
       font-weight: 800;
       flex: 1;
     }
+    .repo-updated {
+      display: block;
+      margin-top: -14px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
     .card-actions {
       display: flex;
       gap: 20px;
@@ -882,18 +907,32 @@
     @media (max-width: 900px) {
       .page { min-height: auto; }
       .side { display: none; }
+      .container { width: min(100% - 32px, 680px); }
       header {
         height: auto;
         padding: 26px 0;
         align-items: flex-start;
         gap: 20px;
       }
-      nav { gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+      nav {
+        min-width: 0;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
       .hero,
       .about,
       .contacts,
       .skills-layout {
         grid-template-columns: 1fr;
+        min-width: 0;
+      }
+      .hero > *,
+      .about > *,
+      .contacts > *,
+      .skills-layout > *,
+      footer > * {
+        min-width: 0;
       }
       .hero { padding-top: 20px; }
       .hero-art { height: 380px; max-width: 500px; }
@@ -909,6 +948,186 @@
       .contact-card.wide { width: 100%; margin-left: 0; }
       footer { grid-template-columns: 1fr; gap: 38px; }
       .copyright { position: static; transform: none; margin: 40px 0; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: calc(100% - 32px); }
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 18px 12px;
+        padding: 22px 0 12px;
+      }
+      nav {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(4, auto) 1fr auto;
+        justify-content: start;
+        gap: 10px 13px;
+        width: 100%;
+        font-size: 10px;
+      }
+      nav a { white-space: nowrap; }
+      .lang { justify-self: end; }
+      .theme-toggle { justify-self: end; }
+      .hero {
+        min-height: auto;
+        padding-top: 48px;
+      }
+      .hero-copy { padding-top: 0; min-width: 0; }
+      h1 {
+        max-width: 100%;
+        font-size: 27px;
+        line-height: 1.32;
+        overflow-wrap: anywhere;
+      }
+      .lead {
+        margin-top: 28px;
+        max-width: 100%;
+        font-size: 13px;
+      }
+      .github-sync {
+        align-items: flex-start;
+        max-width: 100%;
+        font-size: 10px;
+      }
+      .hero-art {
+        width: 100%;
+        height: 395px;
+        margin-top: 46px;
+      }
+      .hero-person {
+        width: 350px;
+        max-width: none;
+        right: -42px;
+        top: -18px;
+      }
+      .hero-art::before {
+        left: 18px;
+        top: 84px;
+      }
+      .hero-art::after {
+        left: 88px;
+        top: 38px;
+      }
+      .status {
+        right: -10px;
+        bottom: 32px;
+        width: calc(100% - 22px);
+        height: auto;
+        min-height: 37px;
+        padding: 8px 12px;
+        font-size: 11px;
+      }
+      .quote {
+        width: calc(100% - 12px);
+        min-height: 0;
+        margin: 58px 0 118px 0;
+        padding: 24px 22px;
+        font-size: 17px;
+      }
+      .quote-credit {
+        width: 140px;
+        height: 55px;
+        bottom: -55px;
+        font-size: 13px;
+      }
+      .projects-head {
+        align-items: flex-end;
+        gap: 12px;
+      }
+      .section-title {
+        min-width: 0;
+        gap: 12px;
+        font-size: 27px;
+        white-space: normal;
+      }
+      .section-title::after { min-width: 22px; }
+      .view-all {
+        margin-bottom: 5px;
+        font-size: 10px;
+      }
+      .projects { gap: 24px; margin-bottom: 110px; }
+      .card { width: 100%; min-height: 0; }
+      .project-shot { height: 190px; }
+      .tags {
+        font-size: 11px;
+        gap: 7px;
+      }
+      .card h3 {
+        min-height: 0;
+        font-size: 22px;
+        overflow-wrap: anywhere;
+      }
+      .card p { font-size: 13px; }
+      .skills-section { margin-bottom: 110px; }
+      .skills-layout { gap: 14px; }
+      .decor-space {
+        min-height: 150px;
+        transform: scale(.82);
+        transform-origin: left top;
+      }
+      .skill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0;
+      }
+      .skill-box {
+        min-width: 0;
+        font-size: 12px;
+      }
+      .skill-box h4 {
+        height: auto;
+        min-height: 31px;
+        font-size: 12px;
+        line-height: 1.25;
+      }
+      .about {
+        gap: 34px;
+        margin-bottom: 110px;
+      }
+      .about p { font-size: 13px; }
+      .about-art { height: 330px; }
+      .about-person {
+        width: 390px;
+        right: -65px;
+        top: -12px;
+      }
+      .contacts {
+        gap: 34px;
+        margin-bottom: 80px;
+      }
+      .contacts p { font-size: 13px; }
+      .contact-card,
+      .contact-card.wide {
+        width: 100%;
+        font-size: 12px;
+      }
+      footer { padding-top: 30px; }
+      .footer-mail { display: block; margin: 15px 0 0; }
+      .copyright {
+        white-space: normal;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      nav {
+        grid-template-columns: repeat(2, auto) 1fr auto;
+      }
+      nav a:nth-child(3),
+      nav a:nth-child(4) {
+        grid-row: 2;
+      }
+      .lang {
+        grid-column: 3;
+        grid-row: 1;
+      }
+      .theme-toggle {
+        grid-column: 4;
+        grid-row: 1;
+      }
+      .hero { padding-top: 34px; }
     }
   </style>
 </head>
@@ -947,8 +1166,9 @@
 
       <section class="hero" id="home">
         <div class="hero-copy">
-          <h1>Денис — <span class="accent">AI-инженер</span> и архитектор <span class="accent">автоматизации</span></h1>
-          <p class="lead">Проектирую автономные AI-системы, которые берут на себя операционные задачи: контент, CRM, почту, аналитику, инфраструктуру и контроль выполнения.</p>
+          <h1><span data-github-name>Денис</span> — <span class="accent">AI-инженер</span> и full-stack <span class="accent">разработчик</span></h1>
+          <p class="lead">Люблю разбираться в сложных процессах и превращать их в понятные, надёжные продукты. Работаю с AI-агентами, backend, frontend и инфраструктурой.</p>
+          <div class="github-sync" aria-live="polite"><span data-github-summary>Данные проектов синхронизируются с GitHub</span></div>
           <a class="btn" href="#contacts">Связаться</a>
         </div>
         <div class="hero-art" aria-hidden="true">
@@ -958,8 +1178,8 @@
       </section>
 
       <section class="quote" aria-label="Цитата">
-        <span>Я ставлю цель — агенты доводят её до результата</span>
-        <span class="quote-credit">- agent-os</span>
+        <span>Хорошая автоматизация освобождает время, а не создаёт новый способ за ней следить</span>
+        <span class="quote-credit">- мой принцип</span>
       </section>
 
       <section id="works" aria-labelledby="projects-title">
@@ -969,44 +1189,47 @@
         </div>
 
         <div class="projects">
-          <article class="card">
+          <article class="card" data-repo="agent-os">
             <div class="project-shot">
               <img src="assets/project-agent-os.png" alt="">
             </div>
-            <div class="tags">Python PostgreSQL Qdrant Redis FastMCP</div>
+            <div class="tags" data-repo-topics>Python PostgreSQL Qdrant Redis FastMCP</div>
             <div class="card-body">
-              <h3>agent-os</h3>
-              <p>Личная AI-операционная система: 9 агентов, 5 отделов и автоматизация startup-операций 24/7.</p>
+              <h3 data-repo-name>agent-os</h3>
+              <p>Система из специализированных AI-агентов, которая помогает мне вести реальные операционные задачи: от контента и исследований до мониторинга и CRM.</p>
+              <span class="repo-updated" data-repo-updated>Актуальные данные загружаются с GitHub</span>
               <div class="card-actions">
-                <a class="btn small" href="https://github.com/Lenis45/agent-os">Код &lt;~&gt;</a>
+                <a class="btn small" data-repo-link href="https://github.com/Lenis45/agent-os">Код &lt;~&gt;</a>
               </div>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-repo="online-store">
             <div class="project-shot">
               <img src="assets/project-online-store.png" alt="">
             </div>
-            <div class="tags">React Express Node.js PostgreSQL</div>
+            <div class="tags" data-repo-topics>React Express Node.js PostgreSQL</div>
             <div class="card-body">
-              <h3>online-store</h3>
-              <p>Full-stack интернет-магазин: витрина на React, API на Node.js/Express и PostgreSQL.</p>
+              <h3 data-repo-name>online-store</h3>
+              <p>Full-stack интернет-магазин, на котором я отрабатывал весь путь продукта: интерфейс, API, работу с базой данных и связку клиентской и серверной частей.</p>
+              <span class="repo-updated" data-repo-updated>Актуальные данные загружаются с GitHub</span>
               <div class="card-actions">
-                <a class="btn small" href="https://github.com/Lenis45/online-store">Код &lt;~&gt;</a>
+                <a class="btn small" data-repo-link href="https://github.com/Lenis45/online-store">Код &lt;~&gt;</a>
               </div>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-repo="lenis45.github.io">
             <div class="project-shot">
-              <img src="assets/project-university-map.png" alt="">
+              <img src="assets/project-portfolio.png" alt="">
             </div>
-            <div class="tags">React TypeScript Redux SVG</div>
+            <div class="tags" data-repo-topics>HTML CSS JavaScript GitHub Pages</div>
             <div class="card-body">
-              <h3>University_Map</h3>
-              <p>Интерактивная карта кампуса с SVG-сценой, состоянием на Redux и React-интерфейсом.</p>
+              <h3 data-repo-name>lenis45.github.io</h3>
+              <p>Это портфолио: адаптивная страница с двумя темами и автоматической синхронизацией открытых данных моего GitHub-профиля.</p>
+              <span class="repo-updated" data-repo-updated>Актуальные данные загружаются с GitHub</span>
               <div class="card-actions">
-                <a class="btn small" href="https://github.com/Lenis45/University_Map">Код &lt;~&gt;</a>
+                <a class="btn small" data-repo-link href="https://github.com/Lenis45/lenis45.github.io">Код &lt;~&gt;</a>
               </div>
             </div>
           </article>
@@ -1027,23 +1250,23 @@
           <div class="skill-grid">
             <div class="skill-box">
               <h4>Языки</h4>
-              <p>Python Go<br>TypeScript JavaScript</p>
+              <p>Python Go Kotlin<br>TypeScript JavaScript</p>
             </div>
             <div class="skill-box">
               <h4>Базы данных</h4>
-              <p>PostgreSQL Redis<br>Qdrant Mongo</p>
+              <p>PostgreSQL Redis<br>Qdrant MongoDB</p>
             </div>
             <div class="skill-box">
-              <h4>Инструменты</h4>
-              <p>Codex MCP Docker<br>launchd Git Langfuse</p>
+              <h4>Backend / Infra</h4>
+              <p>Docker Kafka Git<br>launchd Keycloak</p>
             </div>
             <div class="skill-box">
-              <h4>AI / Ops</h4>
-              <p>LLM routing CRM<br>Monitoring Agents</p>
+              <h4>AI-инженерия</h4>
+              <p>LLM routing RAG<br>MCP Agents Monitoring</p>
             </div>
             <div class="skill-box">
-              <h4>Фреймворки</h4>
-              <p>React FastMCP<br>Express Expo Three.js</p>
+              <h4>Продуктовая разработка</h4>
+              <p>React Express FastMCP<br>API UX Automation</p>
             </div>
           </div>
         </div>
@@ -1052,9 +1275,10 @@
       <section class="about" id="about" aria-labelledby="about-title">
         <div>
           <h2 class="section-title about-line" id="about-title"><span class="hash">#</span>обо-мне</h2>
-          <p>Привет, я Денис!</p>
-          <p>Я AI-инженер из Москвы. Собираю системы, где несколько специализированных агентов работают как мини-команда: принимают цели, разбивают их на задачи, передают контекст и возвращают готовый результат.</p>
-          <p>Мой главный проект — agent-os для Amori: оркестратор, очередь задач, content factory, CRM-синхронизация, мониторинг инфраструктуры и MCP-инструменты для Codex/Claude. Правило простое: агенты делают работу, я утверждаю то, что выходит наружу.</p>
+          <p>Привет, я Денис. Живу в <span data-github-location>Москве</span> и работаю в <span data-github-company>Amori</span>.</p>
+          <p>Мне нравится смотреть на задачу целиком: понять, что действительно нужно человеку или бизнесу, продумать архитектуру, написать код и довести всё до работающего результата. Поэтому я не ограничиваю себя одной частью стека и спокойно переключаюсь между интерфейсом, backend, данными и инфраструктурой.</p>
+          <p>Сейчас мой основной фокус — AI-инженерия и автоматизация. Я собираю агентные системы, подключаю их к реальным сервисам и уделяю много внимания устойчивости: очередям, контексту, мониторингу, понятным ограничениям и контролю человека там, где он действительно нужен.</p>
+          <p>В работе ценю самостоятельность, ясную коммуникацию и аккуратность. Быстро осваиваю новые инструменты, но выбираю технологию не ради моды, а когда она делает продукт проще, надёжнее или полезнее.</p>
           <a class="btn" href="https://github.com/Lenis45/Lenis45">Подробнее -&gt;</a>
         </div>
         <div class="about-art" aria-hidden="true">
@@ -1067,7 +1291,7 @@
       <section id="contacts" class="contacts" aria-labelledby="contacts-title">
         <div>
           <h2 class="section-title contact-line" id="contacts-title"><span class="hash">#</span>контакты</h2>
-          <p>Открыт к задачам на стыке AI-инженерии, автоматизации, продуктов и инфраструктуры: от прототипа агента до системы, которая реально работает каждый день.</p>
+          <p>Открыт к сильным продуктовым и инженерным задачам: AI-системам, backend-разработке, автоматизации и проектам, где важно не только написать код, но и отвечать за результат целиком.</p>
         </div>
         <div>
           <div class="contact-card">
@@ -1087,7 +1311,7 @@
         <div>
           <a class="brand" href="#home"><span class="brand-mark"></span><span>Denis</span></a>
           <a class="footer-mail" href="https://amori.online">amori.online</a>
-          <p class="footer-copy">AI-инженер и архитектор автоматизации, создающий автономные агентные системы в Москве</p>
+          <p class="footer-copy">AI-инженер и full-stack разработчик из Москвы. Создаю продукты, автоматизацию и системы, которыми удобно пользоваться каждый день.</p>
         </div>
         <div class="media">
           <h4>Медиа</h4>
@@ -1128,6 +1352,83 @@
         } catch (_) {}
         setTheme(nextTheme);
       });
+    })();
+
+    (() => {
+      const username = "Lenis45";
+      const apiRoot = "https://api.github.com";
+      const summary = document.querySelector("[data-github-summary]");
+      const cards = [...document.querySelectorAll("[data-repo]")];
+      const fallbackTopics = {
+        "agent-os": ["Python", "PostgreSQL", "Qdrant", "Redis", "FastMCP"],
+        "online-store": ["React", "Express", "Node.js", "PostgreSQL"],
+        "lenis45.github.io": ["HTML", "CSS", "JavaScript", "GitHub Pages"]
+      };
+
+      const formatDate = (value) => new Intl.DateTimeFormat("ru-RU", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(new Date(value));
+
+      const setText = (selector, value) => {
+        if (!value) return;
+        document.querySelectorAll(selector).forEach((node) => {
+          node.textContent = value;
+        });
+      };
+
+      const syncCard = (card, repo) => {
+        if (!repo) return;
+        const name = card.querySelector("[data-repo-name]");
+        const topics = card.querySelector("[data-repo-topics]");
+        const updated = card.querySelector("[data-repo-updated]");
+        const link = card.querySelector("[data-repo-link]");
+        const labels = [repo.language, ...(repo.topics || [])]
+          .filter(Boolean)
+          .map((item) => item.replaceAll("-", " "));
+        const uniqueLabels = [...new Set(labels)].slice(0, 5);
+
+        if (name) name.textContent = repo.name;
+        if (topics) {
+          topics.textContent = (uniqueLabels.length ? uniqueLabels : fallbackTopics[repo.name]).join(" ");
+        }
+        if (updated) updated.textContent = `Обновлён ${formatDate(repo.pushed_at)}`;
+        if (link) link.href = repo.html_url;
+      };
+
+      Promise.all([
+        fetch(`${apiRoot}/users/${username}`, { headers: { Accept: "application/vnd.github+json" } }),
+        fetch(`${apiRoot}/users/${username}/repos?per_page=100&sort=updated`, {
+          headers: { Accept: "application/vnd.github+json" }
+        })
+      ])
+        .then(async ([profileResponse, reposResponse]) => {
+          if (!profileResponse.ok || !reposResponse.ok) throw new Error("GitHub API unavailable");
+          const [profile, repos] = await Promise.all([profileResponse.json(), reposResponse.json()]);
+          const githubFirstName = profile.name ? profile.name.split(" ")[0] : "";
+          const firstName = githubFirstName === "Denis" ? "Денис" : (githubFirstName || "Денис");
+          const repoMap = new Map(repos.map((repo) => [repo.name, repo]));
+
+          setText("[data-github-name]", firstName);
+          setText("[data-github-location]", profile.location === "Moscow" ? "Москве" : profile.location);
+          setText("[data-github-company]", profile.company);
+          cards.forEach((card) => syncCard(card, repoMap.get(card.dataset.repo)));
+
+          if (summary) {
+            const latestUpdate = repos.reduce((latest, repo) => {
+              return !latest || new Date(repo.pushed_at) > new Date(latest) ? repo.pushed_at : latest;
+            }, "");
+            summary.textContent = `${profile.public_repos} публичных репозиториев · GitHub обновлён ${formatDate(latestUpdate)}`;
+          }
+        })
+        .catch(() => {
+          cards.forEach((card) => {
+            const updated = card.querySelector("[data-repo-updated]");
+            if (updated) updated.textContent = "Проект доступен на GitHub";
+          });
+          if (summary) summary.textContent = "Проекты и код доступны на GitHub";
+        });
     })();
   </script>
 </body>
